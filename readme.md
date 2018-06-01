@@ -28,7 +28,7 @@ Then let's add a script for Nuxt.js by opening the package.json from your favori
 ``` "dev": "nuxt" ``` to the scripts. 
 
 Your folder and package.json should look like this.
-![image of package.json and folder structure](https://raw.githubusercontent.com/trleonarddalmacio/images/master/nuxt-tutorial/Intro%201.png)
+![image of package.json and folder structure](https://raw.githubusercontent.com/trleonarddalmacio/images/master/nuxt-tutorial/https://raw.githubusercontent.com/trleonarddalmacio/images/master/nuxt-tutorial/1.%20Intro%201.png)
 
 To verify that it's running correctly let's create a folder named **pages**, and create an **index.vue** file inside the created folder. 
 
@@ -54,7 +54,7 @@ $ npm run dev
 ```
 Now your file should be running at **http://localhost:3000/**
 ![alt-text](https://raw.githubusercontent.com/trleonarddalmacio/images/master/nuxt-tutorial/1.%20Intro%202.png)
-Congratulations on running Nuxt.js!
+
 
 # 2. Directory Structure
 There are 8 folder and 2 files that are important for Nuxt.js. Included in those are the **pages** folder and the **package.json**, but in this tutorial, we would not be using all of them. Still, I would be creating all of them.
