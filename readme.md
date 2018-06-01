@@ -1,16 +1,16 @@
 In this tutorial I'll try to help you understand the fundamental workings of the Nuxt.js. This tutorial uses the [official Nuxt.js documentation](https://nuxtjs.org/) as a reference.
 
 Techonologies used:
--- Vue
--- Nuxt
--- Webpack
--- Babel
--- Sass
--- Pug
--- Vuex
--- Axios
--- Buefy
--- Bulma
+- Vue
+- Nuxt
+- Webpack
+- Babel
+- Sass
+- Pug
+- Vuex
+- Axios
+- Buefy
+- Bulma
 
 # 1. [Installation from scratch](https://nuxtjs.org/guide/installation)
 First we need to create a folder where our project would be located and initialize a package.json.
