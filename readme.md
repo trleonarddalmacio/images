@@ -272,7 +272,77 @@ In browser:
 ![assets-static-result](https://raw.githubusercontent.com/trleonarddalmacio/images/master/nuxt-tutorial/5%20Assets%202.1.png)
 
 
-# 6. Plugins
+# 6. [Plugins](https://nuxtjs.org/guide/plugins)
 Plugins are called before the initialization of the root vue.js application.
 
-If we have external packages that we used we need to use, we must include them in nuxt.config.js so we will only import them once. For example
+If we have external packages that we need to use, we must include them in nuxt.config.js so we will only import the file once, because if we don't include them in the nuxt.config.js, every time we import the that file, the bundle.js would grow larger. If we include them in the nuxt.config.js, even if we import them from different components the bundle.js wouldn't grow larger.
+
+We will fix the Axios that we import earlier and add a Buefy plugin.
+
+To intall Buefy run
+```
+$ npm install --save buefy
+```
+
+After installing, create a file called **buefy.js** inside the **plugins folder** and add the following code
+```javascript
+import  Vue  from  'vue';
+import  Buefy  from  'buefy';
+import  'buefy/lib/buefy.css';
+
+Vue.use(Buefy);
+```
+
+Thereafter, open the nuxt.config.js and copy this code
+```javascript
+module.exports  = {
+	build: {
+		vendor: [
+			'axios',
+			'buefy'
+		]
+	},
+
+	plugins: [
+		{ src:  '~/plugins/buefy', ssr:  false }
+	]
+}
+```
+
+Now we can freely use the Buefy inside our modules, and copy this to your /pages/index.vue file
+```html
+<template>
+	<div  class="has-text-centered">
+	<h1>Hello WORLD!</h1>
+	<br>
+	<div  class="columns ">
+			<div  class="column">
+				<p>Image 1 from assets</p>
+				<br>
+				<img  src="~/assets/img1.jpeg"  alt="img1"  title="img1">
+			</div>
+			<div  class="column">
+				<p>Image 2 from static</p>
+				<br>
+				<img  src="/img2.jpeg"  alt="img1"  title="img1">
+			</div>
+		</div>
+	</div>
+</template>
+
+<style  scoped>
+.column {
+	border: 1px  solid  crimson;
+	margin: 0  30px;
+}
+</style>
+```
+
+My files
+![plugin-file-structure](https://raw.githubusercontent.com/trleonarddalmacio/images/master/nuxt-tutorial/6%20Plugins%201.png)
+
+Output:
+
+![plugin-output](https://raw.githubusercontent.com/trleonarddalmacio/images/master/nuxt-tutorial/6%20Plugins%202.png)
+
+# 7. Deployment
